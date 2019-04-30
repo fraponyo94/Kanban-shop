@@ -1,0 +1,11 @@
+
+
+TO RUN THE APPLICATION
+
+  ##tECHNOLOGIES USED
+      spring boot
+      Javafx(views developed by SceneBuilder)
+      H2 in-memory database.
+
+  ##Preffered IDE for code debuging
+  Intellij Idea Ultimate

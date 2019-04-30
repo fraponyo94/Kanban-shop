@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600" prefWidth="900" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.shop.production.shop.controller.CloseOutController">
+   <children>
+       <MenuBar fx:id="menuBar" layoutX="1.0" layoutY="1.0" prefHeight="40.0" prefWidth="900.0">
+           <menus>
+               <Menu mnemonicParsing="false" text="PRE-PRODUCTION">
+                   <items>
+                       <MenuItem mnemonicParsing="false" onAction="#handleEmployeeAction" text="Employees" />
+                       <SeparatorMenuItem mnemonicParsing="false" />
+                       <MenuItem mnemonicParsing="false" onAction="#handleCustomersAction" text="Customers" />
+                       <SeparatorMenuItem mnemonicParsing="false" />
+                       <MenuItem mnemonicParsing="false" onAction="#handleJobsAction" text="Jobs" />
+                       <SeparatorMenuItem mnemonicParsing="false" />
+                       <MenuItem mnemonicParsing="false" onAction="#handleComponentsAction" text="Components" />
+                       <SeparatorMenuItem mnemonicParsing="false" />
+                       <MenuItem mnemonicParsing="false" onAction="#handleProductionAction" text="Product" />
+                   </items>
+               </Menu>
+               <Menu mnemonicParsing="false" text="Production">
+                   <items>
+                       <MenuItem mnemonicParsing="false" onAction="#handleProductionAction" text="Production" />
+                   </items>
+               </Menu>
+               <Menu mnemonicParsing="false" text="CLOSE OUT">
+                   <items>
+                       <MenuItem fx:id="closeOut1" mnemonicParsing="false" onAction="#handleCloseOutAction" text="Close Out" />
+                   </items>
+               </Menu>
+           </menus>
+       </MenuBar>
+      <TableView fx:id="jobTable" layoutX="32.0" layoutY="130.0" prefHeight="330.0" prefWidth="822.0">
+        <columns>
+          <TableColumn fx:id="colJob" prefWidth="258.99998474121094" text="Job" />
+          <TableColumn fx:id="colDescription" prefWidth="378.0" text="Description" />
+            <TableColumn fx:id="colCloseOut" prefWidth="181.0" text="Total Cost" />
+        </columns>
+      </TableView>
+      <Label layoutX="364.0" layoutY="92.0" prefHeight="21.0" prefWidth="285.0" text="Finished Jobs Summary Report" />
+   </children>
+</AnchorPane>

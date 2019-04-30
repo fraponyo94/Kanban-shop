@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600" prefWidth="900" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.shop.production.shop.controller.ProductController">
+   <children>
+      <MenuBar fx:id="menuBar" layoutX="1.0" layoutY="1.0" prefHeight="40.0" prefWidth="900.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="PRE-PRODUCTION">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleEmployeeAction" text="Employees" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleCustomersAction" text="Customers" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleJobsAction" text="Jobs" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleComponentsAction" text="Components" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleProductionAction" text="Product" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Production">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleProductionAction" text="Production" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="CLOSE OUT">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleCloseOutAction" text="Close Out" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <VBox layoutX="318.0" layoutY="93.0" prefHeight="349.0" prefWidth="562.0">
+         <children>
+            <TableView fx:id="componentTable" prefHeight="357.0" prefWidth="562.0">
+              <columns>
+                <TableColumn fx:id="colComponentName" minWidth="8.0" prefWidth="198.0" text="Component Name" />
+                  <TableColumn fx:id="colQuantity" prefWidth="144.0" text="Quantity" />
+                  <TableColumn fx:id="add" prefWidth="219.0" />
+              </columns>
+            </TableView>
+         </children>
+      </VBox>
+      <Label alignment="CENTER" layoutX="23.0" layoutY="93.0" prefHeight="18.0" prefWidth="218.0" text="Create Product">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label fx:id="componentTitle" layoutX="346.0" layoutY="54.0" prefHeight="31.0" prefWidth="463.0" textFill="#d31454" />
+      <Label alignment="CENTER" layoutX="14.0" layoutY="120.0" prefHeight="45.0" prefWidth="276.0" text="Select job in the drop down below" />
+      <Button fx:id="create" layoutX="166.0" layoutY="242.0" mnemonicParsing="false" onAction="#nextToCreateJob" prefHeight="31.0" prefWidth="100.0" text="create" />
+      <HBox fx:id="h" layoutX="326.0" layoutY="465.0" prefHeight="37.0" prefWidth="529.0">
+         <children>
+            <TextField fx:id="componentName">
+               <HBox.margin>
+                  <Insets right="6.0" />
+               </HBox.margin>
+            </TextField>
+            <TextField fx:id="quantity">
+               <HBox.margin>
+                  <Insets right="6.0" />
+               </HBox.margin>
+            </TextField>
+            <Button fx:id="product" mnemonicParsing="false" onAction="#addProduct" text="Add To Product" />
+         </children>
+      </HBox>
+      <Label fx:id="componentLabel" layoutX="407.0" layoutY="509.0" prefHeight="21.0" prefWidth="342.0">
+         <graphic>
+            <Label fx:id="jobId" />
+         </graphic></Label>
+      <Label fx:id="componentId" layoutX="199.0" layoutY="298.0" />
+      <ComboBox fx:id="jobCombo" layoutX="39.0" layoutY="173.0" prefHeight="31.0" prefWidth="229.0" promptText="&lt;select&gt;" />
+   </children>
+</AnchorPane>
